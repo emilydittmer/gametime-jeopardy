@@ -34,11 +34,13 @@ export default {
         fancyCategoryNames.push('Cable TV')
       }
     });
-      console.log(fancyCategoryNames);
+      // console.log(fancyCategoryNames);
       $(".category-one").text(fancyCategoryNames[0]);
       $(".category-two").text(fancyCategoryNames[1]);
       $(".category-three").text(fancyCategoryNames[2]);
       $(".category-four").text(fancyCategoryNames[3]);
   }
+
+  
 }
 
