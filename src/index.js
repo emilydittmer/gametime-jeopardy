@@ -15,6 +15,7 @@ import domUpdates from './domUpdates.js';
 
 const game = new Game;
 const startBtn = $(".start");
+const card = $(".col");
 
 startBtn.click(function(e) {
   e.preventDefault();
@@ -22,5 +23,9 @@ startBtn.click(function(e) {
   game.getPlayerNames(names);
   game.setRoundOne();
 });
-//instantiate new game()
+
+card.click(function(e) {
+  e.preventDefault();
+  domUpdates.loadQuestion(e);
+})
 

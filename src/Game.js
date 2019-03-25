@@ -36,8 +36,6 @@ class Game {
     domUpdates.appendCategoryNames(this);
     newRound.createCards(this);
     newRound.sortQuestions(this);
-    // domUpdates.prepareQuestions(this);
-    console.log(this.columnFour);
   }
 }
 
