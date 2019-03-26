@@ -10,8 +10,9 @@ class Player {
     game.currentPlayers.push(player);
   }
 
-  scoredChange() {
-
+  scoreChange() {
+    this.score = 100;
+    console.log(this.score);
   }
 }
 
