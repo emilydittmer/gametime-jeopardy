@@ -7,7 +7,7 @@ export default {
       $(".player-one-name").text(names[0].name);
       $(".player-two-name").text(names[1].name);
       $(".player-three-name").text(names[2].name);
-      $("input").remove();
+      $(".player-input").remove();
   },
 
   appendCategoryNames(game) {
@@ -93,8 +93,12 @@ export default {
   },
 
   addInputField() {
-    $(".board").append(`<label>Answer:</label><input type="text"><button>Submit</button>`)
+    // $(".board").append(`<form class="user-answer">
+    //     <label for="user-answer">Answer:</label>
+    //     <input type="text" id="user-answer">
+    //     <button for="user-answer" class="answer-submit">Submit</button></form>`)
   }
+
 }
 
 //click compare category[]

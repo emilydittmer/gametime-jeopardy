@@ -16,6 +16,7 @@ import domUpdates from './domUpdates.js';
 const game = new Game;
 const startBtn = $(".start");
 const card = $(".col");
+let answerSubmit = $(".answer-submit");
 
 startBtn.click(function(e) {
   e.preventDefault();
@@ -25,11 +26,16 @@ startBtn.click(function(e) {
 });
 
 card.click(function(e) {
-  e.preventDefault();
+  // e.preventDefault();
   if (game.isAnswered) {
   domUpdates.loadQuestion(e, game);
-  domUpdates.addInputField();	
+  domUpdates.addInputField();	 
+  $(".user-answer-form").removeClass("hidden");
   }
-  
+});
+
+answerSubmit.click(function(e) {
+  e.preventDefault();
+  console.log('hi');
 })
 
