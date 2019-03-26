@@ -43,7 +43,45 @@ export default {
 
   loadQuestion(e, game) {
     $(e.target.className);
-    const cardClicked = e.target.className;
+
+    let cardClicked =  e.target.className;
+    let splitCardClicked = cardClicked.split('');
+    let targetColumn;
+    let targetRow;
+    if (splitCardClicked[0] === 'a') {
+      targetColumn = 'columnOne';
+    } else if (splitCardClicked[0] === 'b') {
+      targetColumn = 'columnTwo';
+    } else if (splitCardClicked[0] === 'c') {
+      targetColumn = 'columnThree';
+    } else if (splitCardClicked[0] === 'd') {
+      targetColumn = 'columnFour';
+    }
+
+    if (splitCardClicked[1] === '1') {
+      targetRow = 0;
+    } else if (splitCardClicked[1] === '2') {
+      targetRow = 1;
+    } else if (splitCardClicked[1] === '3') {
+      targetRow = 2;
+    } else if (splitCardClicked[1] === '4'){
+      targetRow = 3;
+    }
+
+    $(`.${cardClicked}`).text(game[targetColumn][targetRow].question);
+
+
+
+    // if (cardClicked == 'a1') {
+    //   $(".a1").text(game.columnOne[0].question );
+    // } else if (cardClicked == 'a2') {
+    //     $(".a2").text(game.columnOne[1].question);
+    //   } else if (".")
+    // }
+
+
+    
+
     console.log(cardClicked);
     // data.clues.find(&&)
 
