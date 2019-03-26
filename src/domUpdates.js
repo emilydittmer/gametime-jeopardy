@@ -70,34 +70,18 @@ export default {
 
     $(`.${cardClicked}`).text(game[targetColumn][targetRow].question);
 
-    game.isAnswered = false; 
+    game.isAnswered = false;
+
+  }
+
+ 
+ 
 
 
-
-    // if (cardClicked == 'a1') {
-    //   $(".a1").text(game.columnOne[0].question );
-    // } else if (cardClicked == 'a2') {
-    //     $(".a2").text(game.columnOne[1].question);
-    //   } else if (".")
-    // }
-
-
-    
-
-    console.log(cardClicked);
-    // data.clues.find(&&)
-
-    //for index 0 iterate through column 1 array 
-    //put index 0 of column 1 in 100 slot
-    //after that, then replace text
-  },
-
-  addInputField() {
     // $(".board").append(`<form class="user-answer">
     //     <label for="user-answer">Answer:</label>
     //     <input type="text" id="user-answer">
-    //     <button for="user-answer" class="answer-submit">Submit</button></form>`)
-  }
+    //     <button for="user-answer" class="answer-submit">Submit</button></form>`
 
 }
 

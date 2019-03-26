@@ -38,6 +38,41 @@ class Game {
     newRound.createCards(this);
     newRound.sortQuestions(this);
   }
+
+   compareAnswers(round) {
+    let userInput = $("#user-answer").val().toLowerCase();
+    const allAnswers = [];
+    this.columnOne.forEach((clue) => {
+      allAnswers.push(clue.answer.toLowerCase())
+    });
+    this.columnTwo.forEach((clue) => {
+      allAnswers.push(clue.answer.toLowerCase())
+    });
+     this.columnThree.forEach((clue) => {
+      allAnswers.push(clue.answer.toLowerCase())
+    });
+      this.columnFour.forEach((clue) => {
+      allAnswers.push(clue.answer.toLowerCase())
+    });
+
+if (allAnswers.includes(userInput)) {
+  console.log(true);
+  // $("#user-answer").val('');
+} else {
+  console.log(false);
+}
+
+$("#user-answer").val('')
+this.isAnswered = true;
+  }
+    //input answer is lower case
+  //clue.answer is lower case
+  //compare the values
+    //if true-->score increments
+    //if false-->score decrements
+  //game.cardsClicked++
+  //game.isanswered = true
+  //switch players
 }
 
 export default Game;
