@@ -47,7 +47,7 @@ h3 {
 	margin: 25px 0;
 }
 
-#clue:hover {
+.col:hover {
   background-color: blue;
 }
 

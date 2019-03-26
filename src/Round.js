@@ -7,8 +7,8 @@ class Round {
 		this.round = 1;
 		this.allCategoryNames = [];
 		this.currentCategories = [];
-        this.currentQuestions = [];
-        console.log(this.currentQuestions);
+    this.currentQuestions = [];
+    // console.log(this.currentQuestions);
 	}
 
 
@@ -38,45 +38,63 @@ class Round {
     // console.log(currentCategories)
     // console.log(shuffledCategories)
 	}
-    createCards(game) {
-        console.log(game.roundOneCategories);
-        const roundOneClues = []
-        game.roundOneCategories.forEach(category => {
-            const matchingClues = data.clues.filter(clue => {
-                if (clue.categoryId === category[1]) {
-                   roundOneClues.push(clue);
-                }
-                return roundOneClues;
-            console.log(matchingClues);
-            });
-            roundOneClues.forEach(clue => {
-                let answer = clue.answer;
-                let categoryId = clue.categoryId;
-                let pointValue = clue.pointValue;
-                let question = clue.question
-                var newCard = new Card(answer, categoryId, pointValue, question);
-                newCard.pickColumn(this);
-            return newCard
-            });   
+
+  createCards(game) {
+    console.log(game.roundOneCategories);
+    const roundOneClues = [];
+    game.roundOneCategories.forEach(category => {
+      const matchingClues = data.clues.filter(clue => {
+        if (clue.categoryId === category[1]) {
+          roundOneClues.push(clue);
+        }
+          return roundOneClues;
+          console.log(matchingClues);
         });
+        roundOneClues.forEach(clue => {
+          let answer = clue.answer;
+          let categoryId = clue.categoryId;
+          let pointValue = clue.pointValue;
+          let question = clue.question
+          var newCard = new Card(answer, categoryId, pointValue, question);
+          newCard.pickColumn(this);
+          return newCard
+        });   
+      });
     }
 
     sortQuestions(game) {
-        // console.log(game.roundOneCategories);   
+        // console.log(game.roundOneCategories); 
+        // console.log(this.currentQuestions); 
         this.currentQuestions.forEach(question => {
+            if (game.columnFour.length === 4 && game.columnOne.length === 4 && game.columnTwo.length === 4 && game.columnThree.length === 4) {
+                return;
+            }
             if (question.categoryID === game.roundOneCategories[0][1]) {
-                game.columnOne.push(question);
+                if(!this.checkForUniqueValue(game.columnOne, question)) {
+                    game.columnOne.push(question);
+                }
             } else if (question.categoryID === game.roundOneCategories[1][1]) {
-                game.columnTwo.push(question);
+                if(!this.checkForUniqueValue(game.columnTwo, question)) {
+                    game.columnTwo.push(question);
+                }
             } else if (question.categoryID === game.roundOneCategories[2][1]) {
-                game.columnThree.push(question)
+                if(!this.checkForUniqueValue(game.columnThree, question)) {
+                    game.columnThree.push(question);
+                }
             } else {
-                game.columnFour.push(question)
+                if(!this.checkForUniqueValue(game.columnFour, question)) {
+                    game.columnFour.push(question);
+                }
             }
         });
+        console.log(game);
     }
 
-
+    checkForUniqueValue(column, question) {
+        return column.find(card => {
+            return card.pointValue === question.pointValue;
+        });
+    }
 }
 
 export default Round;

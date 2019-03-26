@@ -41,9 +41,18 @@ export default {
       $(".category-four").text(fancyCategoryNames[3]);
   },
 
-  loadQuestion(e) {
-    $(e.target).text('hi');
-    //column
+  loadQuestion(e, game) {
+    $(e.target.className);
+    const cardClicked = e.target.className;
+    console.log(cardClicked);
+    // data.clues.find(&&)
+
+    //for index 0 iterate through column 1 array 
+    //put index 0 of column 1 in 100 slot
+    //after that, then replace text
   }
 }
+
+//click compare category[]
+//.find() value
 
