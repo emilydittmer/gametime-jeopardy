@@ -1,17 +1,17 @@
 body {
   display: grid;
   font-family: 'Open Sans', sans-serif;
-  grid-template-rows: 10% 60% 5% 20% 5%;
-  height: 1000px;
+  grid-template-rows: 10% 65% 4% 17% 4%;
+  height: 1200px;
 }
 header {
   background-color: blue;
   grid-row: 1;
 }
 
-h1{
+h1 {
   color: #fff;
-  font-size: 3.5em;
+  font-size: 4em;
   margin: 5px auto;
   text-align: center;
 }
@@ -19,8 +19,22 @@ h1{
 main {
   display: grid;
   grid-row: 2;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 6% 94%;
   align-content: center;
+}
+
+.user-answer-form {
+  grid-row: 1;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#user-answer {
+  width: 250px;
+}
+
+.answer-submit {
+  height: 27px;
 }
 
 .board  {
@@ -45,29 +59,27 @@ article {
 }
 
 h3 {
-	color: #fff;
-	font-size: 2.25em;
-	margin: 25px 0;
+  color: #fff;
+  font-size: 2.25em;
+  margin: 25px 0;
+}
+
+.col {
+  color: #fff;
+  font-size: 1.10em;
 }
 
 .col:hover {
   background-color: blue;
 }
 
-.user-answer-form {
-  grid-row: 1;
-}
-
 .hidden {
   visibility: hidden
 }
 
-#user-answer {
-  width: 80px;
-}
-
 .round {
   grid-row: 3;
+  margin-top: 15px;
 }
 
 h4 {
@@ -80,6 +92,7 @@ h4 {
   grid-row: 4;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
+  margin-top: 15px;
 }
 
 .player-one {
@@ -94,27 +107,33 @@ h4 {
   grid-column: 3;
 }
 
+.player-name {
+  margin-bottom: 10px;
+}
+
 #players {
-	 text-align: center;
-	 margin-top: 20px;
+   text-align: center;
+   margin-top: 20px;
 }
 
 label {
-	font-size: 1.25em;
+  font-size: 1.25em;
 }
 .player-input {
-	height: 20px;
-	width: 65%;
+  height: 20px;
+  width: 65%;
+  margin-top: 10px;
 }
 
 h5 {
-	font-size: 1.25em;
-	margin: 10px 0;
+  font-size: 1.25em;
+  margin-top: 7px;
+  margin: 0;
 }
 
 h6 {
-	font-size: 3.25em;
-	margin: 10px 0;
+  font-size: 3.25em;
+  margin: 0;
 }
 
 footer {
@@ -122,16 +141,14 @@ footer {
   text-align: center;
 }
 
-button {
-	height: 50px;
-	width: 200px;
-	margin: 20px;
-	font-size: 1.5em;
+.start, .quit {
+  height: 30px;
+  width: 200px;
+  margin: 20px;
+  font-size: 1.1em;
 }
 
 button:hover {
-	background-color: blue;
-	color: #fff;
+  background-color: blue;
+  color: #fff;
 }
-
-
