@@ -90,6 +90,10 @@ export default {
     //for index 0 iterate through column 1 array 
     //put index 0 of column 1 in 100 slot
     //after that, then replace text
+  },
+
+  addInputField() {
+    $(".board").append(`<label>Answer:</label><input type="text"><button>Submit</button>`)
   }
 }
 
