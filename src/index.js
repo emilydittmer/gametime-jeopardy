@@ -26,6 +26,9 @@ startBtn.click(function(e) {
 
 card.click(function(e) {
   e.preventDefault();
-  domUpdates.loadQuestion(e, game);
+  if (game.isAnswered) {
+  domUpdates.loadQuestion(e, game);	
+  }
+  
 })
 
