@@ -70,6 +70,8 @@ export default {
 
     $(`.${cardClicked}`).text(game[targetColumn][targetRow].question);
 
+    game.isAnswered = false; 
+
 
 
     // if (cardClicked == 'a1') {

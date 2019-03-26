@@ -18,6 +18,7 @@ class Game {
     this.columnTwo = [];
     this.columnThree = [];
     this.columnFour = [];
+    this.isAnswered = true;
 	}
 
   getPlayerNames(names) {
