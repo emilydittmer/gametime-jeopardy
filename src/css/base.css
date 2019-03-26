@@ -17,11 +17,14 @@ h1{
 }
 
 main {
+  display: grid;
   grid-row: 2;
+  grid-template-rows: 10% 90%;
   align-content: center;
 }
 
 .board  {
+  grid-row: 3;
   display: grid;
   grid-template-rows: 20% 20% 20% 20% 20%;
   grid-template-columns: 25% 25% 25% 25%;
@@ -49,6 +52,18 @@ h3 {
 
 .col:hover {
   background-color: blue;
+}
+
+.user-answer-form {
+  grid-row: 1;
+}
+
+.hidden {
+  visibility: hidden
+}
+
+#user-answer {
+  width: 80px;
 }
 
 .round {
@@ -87,7 +102,7 @@ h4 {
 label {
 	font-size: 1.25em;
 }
-input {
+.player-input {
 	height: 20px;
 	width: 65%;
 }

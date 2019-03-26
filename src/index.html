@@ -7,69 +7,76 @@
   <body>
     <header>
       <h1>Jeopardy</h1>
-    </header>
+    </header> 
     <main>
-      <section class='board'>
-        <article>
-            <h2 class='category-one'>category one</h2>
-        </article>
-        <article>
-            <h2 class='category-two'>category two</h2>
-        </article>
-        <article>
-            <h2 class='category-three'>category three</h2>
-        </article>
-        <article>
-            <h2 class='category-four'>category four</h2>
-        </article>
-        <article class='col a1' > 
-            <h3 class= 'a1'>100</h3>
-        </article>
-        <article class='col b1'> 
-            <h3 class= 'b1'>100</h3>
-        </article>
-        <article class='col c1'>
-            <h3 class= 'c1'>100</h3>
-        </article>
-        <article class='col d1'> 
-            <h3 class= 'd1'>100</h3>
-        </article>
-        <article class='col a2'>
-            <h3 class= 'a2'>200</h3>
-        </article>
-        <article class='col b2'>
-            <h3 class= 'b2'>200</h3>
-        </article>
-        <article class='col c2'>
-            <h3 class= 'c2'>200</h3>
-        </article>
-        <article class='col d2'>
-            <h3 class= 'd2'>200</h3>
-        </article>
-        <article class='col a3'>
-            <h3 class= 'a3'>300</h3>
-        </article>
-        <article class='col b3'>
-            <h3 class= 'b3'>300</h3>
-        </article>
-        <article class='col c3'>
-            <h3 class= 'c3'>300</h3>
-        </article>
-        <article class='col d3'>
-            <h3 class= 'd3'>300</h3>
-        </article>
-        <article class='col a4'>
-            <h3 class='a4'>400</h3>
-        </article>
-        <article class='col b4'>
-            <h3 class='b4'>400</h3>
-        </article>
-        <article class='col c4'>
-            <h3 class='c4'>400</h3>
-        </article>
-        <article class='col d4'>
-            <h3 class= 'd4'>400</h3>
-        </article>
+        <section>
+            <form class="user-answer-form hidden">
+                <label for="user-answer">Answer:</label>
+                <input type="text" id="user-answer" placeholder="answer" />
+                <button for="user-answer" class="answer-submit">Submit</button>
+            </form>
+        </section>
+        <section class='board'>
+            <article>
+                <h2 class='category-one'>category one</h2>
+            </article>
+            <article>
+                <h2 class='category-two'>category two</h2>
+            </article>
+            <article>
+                <h2 class='category-three'>category three</h2>
+            </article>
+            <article>
+                <h2 class='category-four'>category four</h2>
+            </article>
+            <article class='col a1' > 
+                <h3 class= 'a1'>100</h3>
+            </article>
+            <article class='col b1'> 
+                <h3 class= 'b1'>100</h3>
+            </article>
+            <article class='col c1'>
+                <h3 class= 'c1'>100</h3>
+            </article>
+            <article class='col d1'> 
+                <h3 class= 'd1'>100</h3>
+            </article>
+            <article class='col a2'>
+                <h3 class= 'a2'>200</h3>
+            </article>
+            <article class='col b2'>
+                <h3 class= 'b2'>200</h3>
+            </article>
+            <article class='col c2'>
+                <h3 class= 'c2'>200</h3>
+            </article>
+            <article class='col d2'>
+                <h3 class= 'd2'>200</h3>
+            </article>
+            <article class='col a3'>
+                <h3 class= 'a3'>300</h3>
+            </article>
+            <article class='col b3'>
+                <h3 class= 'b3'>300</h3>
+            </article>
+            <article class='col c3'>
+                <h3 class= 'c3'>300</h3>
+            </article>
+            <article class='col d3'>
+                <h3 class= 'd3'>300</h3>
+            </article>
+            <article class='col a4'>
+                <h3 class='a4'>400</h3>
+            </article>
+            <article class='col b4'>
+                <h3 class='b4'>400</h3>
+            </article>
+            <article class='col c4'>
+                <h3 class='c4'>400</h3>
+            </article>
+            <article class='col d4'>
+                <h3 class= 'd4'>400</h3>
+            </article>
       </section>
     </main>
     <section class='round'>
@@ -79,18 +86,18 @@
     <section class='players'>
         <form id='players' class='player-one'>
             <label class='player-one-name'>Player One</label><br/>
-            <input type='text' class='player-one-input' value= 'Player One'/>
+            <input type='text' class='player-one-input player-input' value= 'Player One'/>
             <h5>Score</h5>
             <h6>0</h6>
         </form>
         <form id='players' class='player-two'>
             <label class='player-two-name'>Player Two</label><br/>
-            <input type='text' class= 'player-two-input'value= 'Player Two'/>
+            <input type='text' class= 'player-two-input player-input'value= 'Player Two'/>
             <h5>Score</h5>
             <h6>0</h6>
         </form>
         <form id='players' class='player-three'>
-            <label class='player-three-name'>Player Three</label><br/>
+            <label class='player-three-name player-input'>Player Three</label><br/>
             <input type='text' class= 'player-three-input'value= 'Player Three'/>
             <h5>Score</h5>
             <h6>0</h6>
