@@ -18,6 +18,10 @@ const startBtn = $(".start");
 const card = $(".col");
 let answerSubmit = $(".answer-submit");
 
+$('.board').click(function(e){
+  console.log($(`h3.${e.target.classList[0]}`)[0].innerHTML);
+})
+
 startBtn.click(function(e) {
   e.preventDefault();
   const names = [$(".player-one-input").val(), $(".player-two-input").val(), $(".player-three-input").val()];
@@ -27,8 +31,10 @@ startBtn.click(function(e) {
 
 card.click(function(e) {
   if (game.isAnswered) {
-    domUpdates.loadQuestion(e, game);
+    setTimeout(function() {
+      domUpdates.loadQuestion(e, game);
     $(".user-answer-form").removeClass("hidden");
+    }, 100)
   }
 });
 
