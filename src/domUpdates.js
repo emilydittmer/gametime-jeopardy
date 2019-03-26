@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Game from './Game.js';
+import index from './index.js';
 
 export default {
   updatePlayerNames(names) {
@@ -34,13 +35,24 @@ export default {
         fancyCategoryNames.push('Cable TV')
       }
     });
-      // console.log(fancyCategoryNames);
       $(".category-one").text(fancyCategoryNames[0]);
       $(".category-two").text(fancyCategoryNames[1]);
       $(".category-three").text(fancyCategoryNames[2]);
       $(".category-four").text(fancyCategoryNames[3]);
-  }
+  },
 
-  
+  loadQuestion(e, game) {
+    $(e.target.className);
+    const cardClicked = e.target.className;
+    console.log(cardClicked);
+    // data.clues.find(&&)
+
+    //for index 0 iterate through column 1 array 
+    //put index 0 of column 1 in 100 slot
+    //after that, then replace text
+  }
 }
+
+//click compare category[]
+//.find() value
 
