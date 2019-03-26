@@ -32,11 +32,6 @@ class Round {
     let currentCategories = shuffledCategories.splice(6,5);
     let firstRound = currentCategories.forEach((category) =>
     	game.roundOneCategories.push(category));
-    // game.roundOneCategories = this.currentCategories;
-     // game.roundOneCategories.push(this.currentCategories);
-// console.log(game);
-    // console.log(currentCategories)
-    // console.log(shuffledCategories)
 	}
 
   createCards(game) {
@@ -48,7 +43,6 @@ class Round {
           roundOneClues.push(clue);
         }
           return roundOneClues;
-          console.log(matchingClues);
         });
         roundOneClues.forEach(clue => {
           let answer = clue.answer;

@@ -29,13 +29,13 @@ card.click(function(e) {
   // e.preventDefault();
   if (game.isAnswered) {
   domUpdates.loadQuestion(e, game);
-  domUpdates.addInputField();	 
+  	 
   $(".user-answer-form").removeClass("hidden");
   }
 });
 
 answerSubmit.click(function(e) {
   e.preventDefault();
-  console.log('hi');
+  game.compareAnswers();
 })
 
