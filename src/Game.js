@@ -19,6 +19,7 @@ class Game {
     this.columnThree = [];
     this.columnFour = [];
     this.isAnswered = true;
+    this.currentPlayerIndex = 0;
 	}
 
   getPlayerNames(names) {
@@ -28,7 +29,7 @@ class Game {
     });
     this.currentPlayers = players;
     domUpdates.updatePlayerNames(this.currentPlayers);
-
+    console.log(players);
   }
 
   setRoundOne() {
@@ -39,7 +40,7 @@ class Game {
     newRound.sortQuestions(this);
   }
 
-   compareAnswers(round) {
+  compareAnswers(round) {
     let userInput = $("#user-answer").val().toLowerCase();
     const allAnswers = [];
     this.columnOne.forEach((clue) => {
@@ -54,22 +55,31 @@ class Game {
       this.columnFour.forEach((clue) => {
       allAnswers.push(clue.answer.toLowerCase())
     });
-
-if (allAnswers.includes(userInput)) {
-  console.log(true);
-  // $("#user-answer").val('');
-} else {
-  console.log(false);
-}
-
-$("#user-answer").val('')
-this.isAnswered = true;
+    if (allAnswers.includes(userInput)) {
+      console.log(true);
+    // $("#user-answer").val('');
+    } else {
+      this.changePlayer();
+    }
+    $("#user-answer").val('')
+    this.isAnswered = true;
+    this.currentPlayers[0].scoreChange();
   }
-    //input answer is lower case
-  //clue.answer is lower case
-  //compare the values
-    //if true-->score increments
-    //if false-->score decrements
+
+  changePlayer() {
+    console.log(this.currentPlayerIndex);
+    if (this.currentPlayerIndex === 0) {
+      this.currentPlayerIndex =1;
+    } else if (this.currentPlayerIndex === 1) {
+      this.currentPlayerIndex = 2;
+    } else if (this.currentPlayerIndex === 2) {
+      this.currentPlayerIndex = 0;
+    }
+    console.log(this.currentPlayerIndex);
+  }
+
+  //if true-->score increments
+  //if false-->score decrements
   //game.cardsClicked++
   //game.isanswered = true
   //switch players

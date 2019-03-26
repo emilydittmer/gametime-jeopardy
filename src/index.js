@@ -26,11 +26,9 @@ startBtn.click(function(e) {
 });
 
 card.click(function(e) {
-  // e.preventDefault();
   if (game.isAnswered) {
-  domUpdates.loadQuestion(e, game);
-  	 
-  $(".user-answer-form").removeClass("hidden");
+    domUpdates.loadQuestion(e, game);
+    $(".user-answer-form").removeClass("hidden");
   }
 });
 
