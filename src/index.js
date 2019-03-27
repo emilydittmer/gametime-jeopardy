@@ -26,7 +26,7 @@ $('.board').click(function(e){
   // game.currentPlayers[game.currentPlayerIndex]
 });
 
-quitBtn.click(function(e) {
+quitBtn.click(function() {
   location.reload (true);
 })
 
