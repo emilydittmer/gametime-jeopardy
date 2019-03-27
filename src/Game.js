@@ -60,17 +60,20 @@ class Game {
       allAnswers.push(clue.answer.toLowerCase())
     });
     if (allAnswers.includes(userInput)) {
-      this.currentPlayers[0].scoreChangeUp(cardValue);
+      this.currentPlayers[this.currentPlayerIndex].scoreChangeUp(cardValue);
     } else {
-      this.currentPlayers[0].scoreChangeDown(cardValue);
+      this.currentPlayers[this.currentPlayerIndex].scoreChangeDown(cardValue);
       this.changePlayer();
     }
+
     $("#user-answer").val('')
     this.isAnswered = true;
-    console.log(this)
+    console.log(this);
+    
   }
 
   changePlayer() {
+    console.log(this.currentPlayerIndex)
     if (this.currentPlayerIndex === 0) {
       this.currentPlayerIndex = 1;
     } else if (this.currentPlayerIndex === 1) {
@@ -78,8 +81,16 @@ class Game {
     } else if (this.currentPlayerIndex === 2) {
       this.currentPlayerIndex = 0;
     }
+    console.log(this.currentPlayerIndex);
   }
 
+  makeDailyDouble(clue) {
+    this.cardsClicked++
+    // console.log(clue);
+    // if(this.cardsClicked === 5) {
+
+    }
+  
   //if true-->score increments
   //if false-->score decrements
   //game.cardsClicked++
