@@ -18,6 +18,7 @@ class Player {
   }
 
   scoreChangeDown(cardValue) {
+    console.log(cardValue);
     this.score -= cardValue;
     console.log(this.score);
   }

@@ -44,7 +44,7 @@ class Game {
   //   this.currentPlayers[0].scoreChange(cardValue);
   // }
 
-  compareAnswers(round, cardValue) {
+  compareAnswers(cardValue) {
     let userInput = $("#user-answer").val().toLowerCase();
     const allAnswers = [];
     this.columnOne.forEach((clue) => {
@@ -67,7 +67,7 @@ class Game {
     }
     $("#user-answer").val('')
     this.isAnswered = true;
-    
+    console.log(this)
   }
 
   changePlayer() {

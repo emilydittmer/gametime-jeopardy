@@ -17,11 +17,12 @@ const game = new Game;
 const startBtn = $(".start");
 const card = $(".col");
 let answerSubmit = $(".answer-submit");
+let cardValue;
 
-const cardValue = $('.board').click(function(e){
-  let cardValue = parseInt($(`h3.${e.target.classList[0]}`)[0].innerHTML);
-  console.log(cardValue);
-  // return cardValue;
+$('.board').click(function(e){
+  cardValue = parseInt($(`h3.${e.target.classList[0]}`)[0].innerHTML);
+  // console.log(cardValue)
+  // game.currentPlayers[game.currentPlayerIndex]
 });
 
 
@@ -41,7 +42,7 @@ card.click(function(e) {
   }
 });
 
-answerSubmit.click(function(e, cardValue) {
+answerSubmit.click(function(e) {
   e.preventDefault();
   game.compareAnswers(cardValue);
   console.log(cardValue);
