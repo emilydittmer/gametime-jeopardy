@@ -15,6 +15,7 @@ import domUpdates from './domUpdates.js';
 
 const game = new Game;
 const startBtn = $(".start");
+const quitBtn = $(".quit")
 const card = $(".col");
 let answerSubmit = $(".answer-submit");
 let cardValue;
@@ -25,6 +26,9 @@ $('.board').click(function(e){
   // game.currentPlayers[game.currentPlayerIndex]
 });
 
+quitBtn.click(function() {
+  location.reload (true);
+})
 
 startBtn.click(function(e) {
   e.preventDefault();

@@ -69,7 +69,6 @@ export default {
     }
 
     $(`.${cardClicked}`).text(game[targetColumn][targetRow].question);
-
     game.isAnswered = false;
 
   }

@@ -12,15 +12,14 @@ class Player {
   }
 
   scoreChangeUp(cardValue) {
-    console.log(cardValue);
     this.score += cardValue;
-    console.log(this.score);
+
   }
 
   scoreChangeDown(cardValue) {
-    console.log(cardValue);
+    // console.log(cardValue);
     this.score -= cardValue;
-    console.log(this.score);
+    // console.log(this.score);
   }
 }
 
