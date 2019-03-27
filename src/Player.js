@@ -1,4 +1,5 @@
 import Game from './Game.js';
+import index from './index.js';
 
 class Player {
   constructor(name) {
@@ -10,8 +11,14 @@ class Player {
     game.currentPlayers.push(player);
   }
 
-  scoreChange() {
-    this.score = 100;
+  scoreChangeUp(cardValue) {
+    console.log(cardValue);
+    this.score += cardValue;
+    console.log(this.score);
+  }
+
+  scoreChangeDown(cardValue) {
+    this.score -= cardValue;
     console.log(this.score);
   }
 }
