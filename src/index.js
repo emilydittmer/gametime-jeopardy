@@ -33,6 +33,7 @@ quitBtn.click(function() {
 startBtn.click(function(e) {
   e.preventDefault();
   const names = [$(".player-one-input").val(), $(".player-two-input").val(), $(".player-three-input").val()];
+  const playerOneName = $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"})
   game.getPlayerNames(names);
   game.setRoundOne();
 });

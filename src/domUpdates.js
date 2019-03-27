@@ -80,9 +80,7 @@ export default {
         $(currentPlayer).next().next().next().text(player.score);
       }
     });
-  }
-
- 
+  },
  
 
 
