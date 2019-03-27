@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Game from './Game.js';
 import index from './index.js';
+import player from './Player.js';
 
 export default {
   updatePlayerNames(names) {
@@ -71,6 +72,14 @@ export default {
     $(`.${cardClicked}`).text(game[targetColumn][targetRow].question);
     game.isAnswered = false;
 
+  },
+
+  updateScore(player) {
+    $(".player-name").each( (index, currentPlayer) => {
+      if($(currentPlayer).text() === player.name) {
+        $(currentPlayer).next().next().next().text(player.score);
+      }
+    });
   }
 
  
