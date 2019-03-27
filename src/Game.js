@@ -40,7 +40,11 @@ class Game {
     newRound.sortQuestions(this);
   }
 
-  compareAnswers(round) {
+  // changeScore(cardValue) {
+  //   this.currentPlayers[0].scoreChange(cardValue);
+  // }
+
+  compareAnswers(round, cardValue) {
     let userInput = $("#user-answer").val().toLowerCase();
     const allAnswers = [];
     this.columnOne.forEach((clue) => {
@@ -56,19 +60,19 @@ class Game {
       allAnswers.push(clue.answer.toLowerCase())
     });
     if (allAnswers.includes(userInput)) {
-      console.log(true);
-    // $("#user-answer").val('');
+      this.currentPlayers[0].scoreChangeUp(cardValue);
     } else {
+      this.currentPlayers[0].scoreChangeDown(cardValue);
       this.changePlayer();
     }
     $("#user-answer").val('')
     this.isAnswered = true;
-    this.currentPlayers[0].scoreChange();
+    
   }
 
   changePlayer() {
     if (this.currentPlayerIndex === 0) {
-      this.currentPlayerIndex =1;
+      this.currentPlayerIndex = 1;
     } else if (this.currentPlayerIndex === 1) {
       this.currentPlayerIndex = 2;
     } else if (this.currentPlayerIndex === 2) {

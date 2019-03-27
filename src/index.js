@@ -18,9 +18,12 @@ const startBtn = $(".start");
 const card = $(".col");
 let answerSubmit = $(".answer-submit");
 
-$('.board').click(function(e){
-  console.log($(`h3.${e.target.classList[0]}`)[0].innerHTML);
-})
+const cardValue = $('.board').click(function(e){
+  let cardValue = parseInt($(`h3.${e.target.classList[0]}`)[0].innerHTML);
+  console.log(cardValue);
+  // return cardValue;
+});
+
 
 startBtn.click(function(e) {
   e.preventDefault();
@@ -38,8 +41,9 @@ card.click(function(e) {
   }
 });
 
-answerSubmit.click(function(e) {
+answerSubmit.click(function(e, cardValue) {
   e.preventDefault();
-  game.compareAnswers();
+  game.compareAnswers(cardValue);
+  console.log(cardValue);
 })
 
