@@ -66,10 +66,10 @@ class Game {
       this.changePlayer();
     }
 
-    $("#user-answer").val('')
+    $("#user-answer").val('');
+    console.log('Answered1?', this.isAnswered);
     this.isAnswered = true;
-    console.log(this);
-    
+    console.log('Answered2?', this.isAnswered);
   }
 
   changePlayer() {
