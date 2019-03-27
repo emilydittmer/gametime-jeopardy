@@ -20,6 +20,7 @@ class Game {
     this.columnFour = [];
     this.isAnswered = true;
     this.currentPlayerIndex = 0;
+    this.playing = 1;
 	}
 
   getPlayerNames(names) {
@@ -65,20 +66,23 @@ class Game {
       this.currentPlayers[this.currentPlayerIndex].scoreChangeDown(cardValue);
       this.changePlayer();
     }
-
     $("#user-answer").val('');
-    console.log('Answered1?', this.isAnswered);
     this.isAnswered = true;
-    console.log('Answered2?', this.isAnswered);
   }
 
   changePlayer() {
     if (this.currentPlayerIndex === 0) {
       this.currentPlayerIndex = 1;
+      $(".player-two-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-one-name").css({"color": "", "font-size": "", "font-weight": ""});
     } else if (this.currentPlayerIndex === 1) {
       this.currentPlayerIndex = 2;
+      $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
     } else if (this.currentPlayerIndex === 2) {
       this.currentPlayerIndex = 0;
+      $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-three-name").css({"color": "", "font-size": "", "font-weight": ""});
     }
   }
 
