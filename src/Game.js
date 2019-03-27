@@ -73,7 +73,6 @@ class Game {
   }
 
   changePlayer() {
-    console.log(this.currentPlayerIndex)
     if (this.currentPlayerIndex === 0) {
       this.currentPlayerIndex = 1;
     } else if (this.currentPlayerIndex === 1) {
@@ -81,7 +80,6 @@ class Game {
     } else if (this.currentPlayerIndex === 2) {
       this.currentPlayerIndex = 0;
     }
-    console.log(this.currentPlayerIndex);
   }
 
   makeDailyDouble(clue) {
