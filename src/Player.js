@@ -1,5 +1,4 @@
 import Game from './Game.js';
-import index from './index.js';
 import domUpdates from './domUpdates.js';
 
 class Player {

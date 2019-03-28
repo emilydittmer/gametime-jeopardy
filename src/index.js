@@ -1,8 +1,12 @@
 import $ from 'jquery';
 import './css/base.css';
 import './css/normalize.css';
-import Game from './Game.js';
-import domUpdates from './domUpdates.js';
+import Card from '../src/Card.js';
+import domUpdates from '../src/domUpdates.js';
+import data from '../src/Game-Data.js';
+import Game from '../src/Game.js';
+import Player from '../src/Player.js';
+import Round from '../src/Round.js';
 
 const game = new Game;
 const startBtn = $(".start");
@@ -35,7 +39,9 @@ card.click(function(e) {
 
 answerSubmit.click(function(e) {
   e.preventDefault();
-  game.compareAnswers(cardValue);
+  let userInput = $("#user-answer").val().toLowerCase();
+  let realAnswer = $(".answer").text().toLowerCase();
+  game.compareAnswers(cardValue, userInput, realAnswer);
 });
 
 quitBtn.click(function() {

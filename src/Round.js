@@ -50,7 +50,7 @@ class Round {
         });
     }
 
-//let {answer, categoryID, pointValue, question} = clue;
+//let {answer, categoryID, pointValue, question} = clue;∫
     sortQuestions(game) {
         this.currentQuestions.forEach(question => {
             if (game.columnFour.length === 4 && game.columnOne.length === 4 && game.columnTwo.length === 4 && game.columnThree.length === 4) {
