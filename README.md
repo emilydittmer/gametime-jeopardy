@@ -16,6 +16,7 @@ npm install
 ```
 ## Screenshots
 ![Imgur](https://i.imgur.com/YFXOkfS.png)
+https://emilydittmer.github.io/gametime-jeopardy/
 
 ## Learning Goals
 
