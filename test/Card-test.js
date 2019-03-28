@@ -1,7 +1,24 @@
 import chai from 'chai';
-import Card from '../src/Card.js';
-
 const expect = chai.expect;
+import spies from 'chai-spies';
+chai.use(spies);
+
+import Card from '../src/Card.js';
+import domUpdates from '../src/domUpdates.js';
+import data from '../src/Game-Data.js';
+import Game from '../src/Game.js';
+import Player from '../src/Player.js';
+import Round from '../src/Round.js';
+
+chai.spy.on(domUpdates, [
+	'updatePlayerNames',
+	'appendCategoryNames',
+	'loadQuestion',
+	'updateScore',
+	'showAnswer',
+	'clearAnswerField',
+	'changePlayers'
+	], () => true);
 
 describe('see if the tests are running', function() {
 	it('should return true', function() {

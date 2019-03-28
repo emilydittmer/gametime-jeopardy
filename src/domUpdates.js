@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import Game from './Game.js';
-import index from './index.js';
 import player from './Player.js';
 
 export default {

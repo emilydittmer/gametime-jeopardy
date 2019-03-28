@@ -1,10 +1,8 @@
 import data from './Game-Data.js';
 import domUpdates from './domUpdates.js';
-import index from './index.js';
 import Player from './Player.js';
 import Round from './Round.js';
 import Card from './Card.js';
-import $ from 'jquery';
 
 class Game {
 	constructor(round, dailyDoubles, cardsClicked) {
@@ -38,9 +36,7 @@ class Game {
     newRound.sortQuestions(this);
   }
 
-  compareAnswers(cardValue) {
-    let userInput = $("#user-answer").val().toLowerCase();
-    let realAnswer = $(".answer").text().toLowerCase();
+  compareAnswers(cardValue, userInput, realAnswer) {
     if (realAnswer === userInput) {
       this.currentPlayers[this.currentPlayerIndex].scoreChangeUp(cardValue);
     } else {
