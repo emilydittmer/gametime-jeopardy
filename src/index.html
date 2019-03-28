@@ -15,6 +15,7 @@
                 <input type="text" id="user-answer" placeholder="Place answer here" />
                 <button for="user-answer" class="answer-submit">Submit</button>
             </form>
+            <p class="current-answer hidden">This Answer Is: <span class="answer"> </span></p>
         </section>
         <section class='board'>
             <article>
@@ -84,21 +85,21 @@
       </h4>
     </section>
     <section class='players'>
-        <form id='players' class='player-one'>
+        <form class='eachPlayer' class='player-one'>
             <label class='player-name player-one-name'>Player One</label><br/>
-            <input type='text' class='player-one-input player-input' value= 'Player One'/>
+            <input type='text' class='player-one-input player-input' placeholder= 'Player One'/>
             <h5>Score</h5>
             <h6 class= "player-one-score">0</h6>
         </form>
-        <form id='players' class='player-two'>
+        <form class='eachPlayer' class='player-two'>
             <label class='player-name player-two-name'>Player Two</label><br/>
-            <input type='text' class= 'player-two-input player-input'value= 'Player Two'/>
+            <input type='text' class= 'player-two-input player-input'placeholder= 'Player Two'/>
             <h5>Score</h5>
             <h6 class= "player-two-score">0</h6>
         </form>
-        <form id='players' class='player-three'>
+        <form class='eachPlayer' class='player-three'>
             <label class='player-name player-three-name'>Player Three</label><br/>
-            <input type='text' class= 'player-three-input player-input'value= 'Player Three'/>
+            <input type='text' class= 'player-three-input player-input'placeholder= 'Player Three'/>
             <h5>Score</h5>
             <h6 class= "player-three-score">0</h6>
         </form>

@@ -1,4 +1,3 @@
-// import Player from './Player.js';
 import data from './Game-Data.js';
 import domUpdates from './domUpdates.js';
 import index from './index.js';
@@ -20,7 +19,6 @@ class Game {
     this.columnFour = [];
     this.isAnswered = true;
     this.currentPlayerIndex = 0;
-    this.playing = 1;
 	}
 
   getPlayerNames(names) {
@@ -30,7 +28,6 @@ class Game {
     });
     this.currentPlayers = players;
     domUpdates.updatePlayerNames(this.currentPlayers);
-    console.log(players);
   }
 
   setRoundOne() {
@@ -41,32 +38,17 @@ class Game {
     newRound.sortQuestions(this);
   }
 
-  // changeScore(cardValue) {
-  //   this.currentPlayers[0].scoreChange(cardValue);
-  // }
-
   compareAnswers(cardValue) {
     let userInput = $("#user-answer").val().toLowerCase();
-    const allAnswers = [];
-    this.columnOne.forEach((clue) => {
-      allAnswers.push(clue.answer.toLowerCase())
-    });
-    this.columnTwo.forEach((clue) => {
-      allAnswers.push(clue.answer.toLowerCase())
-    });
-     this.columnThree.forEach((clue) => {
-      allAnswers.push(clue.answer.toLowerCase())
-    });
-      this.columnFour.forEach((clue) => {
-      allAnswers.push(clue.answer.toLowerCase())
-    });
-    if (allAnswers.includes(userInput)) {
+    let realAnswer = $(".answer").text().toLowerCase();
+    if (realAnswer === userInput) {
       this.currentPlayers[this.currentPlayerIndex].scoreChangeUp(cardValue);
     } else {
       this.currentPlayers[this.currentPlayerIndex].scoreChangeDown(cardValue);
       this.changePlayer();
     }
-    $("#user-answer").val('');
+    $(".current-answer").removeClass("hidden");
+    $("#user-answer").val("");
     this.isAnswered = true;
   }
 
@@ -86,18 +68,6 @@ class Game {
     }
   }
 
-  makeDailyDouble(clue) {
-    this.cardsClicked++
-    // console.log(clue);
-    // if(this.cardsClicked === 5) {
-
-    }
-  
-  //if true-->score increments
-  //if false-->score decrements
-  //game.cardsClicked++
-  //game.isanswered = true
-  //switch players
 }
 
 export default Game;

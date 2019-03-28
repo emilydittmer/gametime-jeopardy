@@ -15,7 +15,6 @@ class Player {
   scoreChangeUp(cardValue) {
     this.score += cardValue;
     domUpdates.updateScore(this);
-
   }
 
   scoreChangeDown(cardValue) {
