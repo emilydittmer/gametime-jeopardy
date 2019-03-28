@@ -45,26 +45,24 @@ class Game {
       this.currentPlayers[this.currentPlayerIndex].scoreChangeUp(cardValue);
     } else {
       this.currentPlayers[this.currentPlayerIndex].scoreChangeDown(cardValue);
-      this.changePlayer();
+      domUpdates.changePlayer();
     }
-    $(".current-answer").removeClass("hidden");
-    $("#user-answer").val("");
+    domUpdates.showAnswer();
+    domUpdates.clearAnswerField();
+
     this.isAnswered = true;
   }
 
   changePlayer() {
     if (this.currentPlayerIndex === 0) {
       this.currentPlayerIndex = 1;
-      $(".player-two-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
-      $(".player-one-name").css({"color": "", "font-size": "", "font-weight": ""});
+      domUpdates.changePlayers(currentPlayerIndex);
     } else if (this.currentPlayerIndex === 1) {
       this.currentPlayerIndex = 2;
-      $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
-      $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
+      domUpdates.changePlayers(currentPlayerIndex)
     } else if (this.currentPlayerIndex === 2) {
       this.currentPlayerIndex = 0;
-      $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
-      $(".player-three-name").css({"color": "", "font-size": "", "font-weight": ""});
+      domUpdates.changePlayers(currentPlayerIndex)
     }
   }
 

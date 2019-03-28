@@ -80,6 +80,28 @@ export default {
         $(currentPlayer).next().next().next().text(player.score);
       }
     });
+  },
+
+  showAnswer() {
+    let correctAnswer = document.querySelector('.current-answer');
+    correctAnswer.remove('hidden');
+  },
+
+  clearAnswerField() {
+    $("#user-answer").val("");
+  },
+
+  changePlayers() {
+    if (game.currentPlayerIndex = 1) {
+      $(".player-two-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-one-name").css({"color": "", "font-size": "", "font-weight": ""});
+    } else if (game.currentPlayerIndex = 2) {
+      $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
+    } else if (game.currentPlayerIndex = 3) {
+      $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
+    }
   }
 
 }

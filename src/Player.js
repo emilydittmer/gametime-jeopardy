@@ -7,11 +7,7 @@ class Player {
     this.name = name;
     this.score = 0;
   }
-
-  listPlayers(){
-    game.currentPlayers.push(player);
-  }
-
+  
   scoreChangeUp(cardValue) {
     this.score += cardValue;
     domUpdates.updateScore(this);
