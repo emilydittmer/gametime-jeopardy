@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Jeopardy</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Jeopardy</h1>
+    </header> 
+    <main>
+        <section>
+            <form class="user-answer-form hidden">
+                <label for="user-answer">Answer:</label>
+                <input type="text" id="user-answer" placeholder="Place answer here" />
+                <button for="user-answer" class="answer-submit">Submit</button>
+            </form>
+            <p class="current-answer hidden">This Answer Is: <span class="answer"> </span></p>
+        </section>
+        <section class='board'>
+            <article>
+                <h2 class='category-one'>Category One</h2>
+            </article>
+            <article>
+                <h2 class='category-two'>Category Two</h2>
+            </article>
+            <article>
+                <h2 class='category-three'>Category Three</h2>
+            </article>
+            <article>
+                <h2 class='category-four'>Category Four</h2>
+            </article>
+            <article class='a1 col' > 
+                <h3 class= 'a1'>100</h3>
+            </article>
+            <article class='b1 col'> 
+                <h3 class= 'b1'>100</h3>
+            </article>
+            <article class='c1 col'>
+                <h3 class= 'c1'>100</h3>
+            </article>
+            <article class='d1 col'> 
+                <h3 class= 'd1'>100</h3>
+            </article>
+            <article class='a2 col'>
+                <h3 class= 'a2'>200</h3>
+            </article>
+            <article class='b2 col'>
+                <h3 class= 'b2'>200</h3>
+            </article>
+            <article class='c2 col'>
+                <h3 class= 'c2'>200</h3>
+            </article>
+            <article class='d2 col'>
+                <h3 class= 'd2'>200</h3>
+            </article>
+            <article class='a3 col'>
+                <h3 class= 'a3'>300</h3>
+            </article>
+            <article class='b3 col'>
+                <h3 class= 'b3'>300</h3>
+            </article>
+            <article class='c3 col'>
+                <h3 class= 'c3'>300</h3>
+            </article>
+            <article class='d3 col'>
+                <h3 class= 'd3'>300</h3>
+            </article>
+            <article class='a4 col'>
+                <h3 class='a4'>400</h3>
+            </article>
+            <article class='b4 col'>
+                <h3 class='b4'>400</h3>
+            </article>
+            <article class='c4 col'>
+                <h3 class='c4'>400</h3>
+            </article>
+            <article class='d4 col'>
+                <h3 class= 'd4'>400</h3>
+            </article>
+        </section>
+    </main>
+    <section class='round'>
+      <h4> Round <span class='round-number'> 1</span>
+      </h4>
+    </section>
+    <section class='players'>
+        <form class='eachPlayer' class='player-one'>
+            <label class='player-name player-one-name'>Player One</label><br/>
+            <input type='text' class='player-one-input player-input' value= 'Player One'/>
+            <h5>Score</h5>
+            <h6 class= "player-one-score">0</h6>
+        </form>
+        <form class='eachPlayer' class='player-two'>
+            <label class='player-name player-two-name'>Player Two</label><br/>
+            <input type='text' class= 'player-two-input player-input'value= 'Player Two'/>
+            <h5>Score</h5>
+            <h6 class= "player-two-score">0</h6>
+        </form>
+        <form class='eachPlayer' class='player-three'>
+            <label class='player-name player-three-name'>Player Three</label><br/>
+            <input type='text' class= 'player-three-input player-input'value= 'Player Three'/>
+            <h5>Score</h5>
+            <h6 class= "player-three-score">0</h6>
+        </form>
+    </section>
+    <footer>
+      <button class='start'>Start</button>
+      <button class='quit'>Quit</button>
+    </footer>
+  <script type="text/javascript" src="main.bundle.js"></script></body>
+</html>
