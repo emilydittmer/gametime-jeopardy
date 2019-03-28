@@ -4,7 +4,7 @@ import domUpdates from './domUpdates.js';
 
 class Player {
   constructor(name) {
-    this.name = name || 'Player';
+    this.name = name;
     this.score = 0;
   }
 
