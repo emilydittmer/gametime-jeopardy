@@ -4,6 +4,7 @@ body {
   grid-template-rows: 10% 65% 4% 17% 4%;
   height: 1200px;
 }
+
 header {
   background-color: blue;
   grid-row: 1;
@@ -17,16 +18,16 @@ h1 {
 }
 
 main {
+  align-content: center;
   display: grid;
   grid-row: 2;
   grid-template-rows: 6% 94%;
-  align-content: center;
 }
 
-.user-answer-form {
+.user-answer-form, .current-answer {
   grid-row: 1;
-  text-align: center;
   margin-top: 10px;
+  text-align: center;
 }
 
 #user-answer {
@@ -37,16 +38,20 @@ main {
   height: 27px;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .board  {
-  grid-row: 3;
-  display: grid;
-  grid-template-rows: 20% 20% 20% 20% 20%;
-  grid-template-columns: 25% 25% 25% 25%;
-  height: 90%;
-  width: 90%;
   border: 2px solid black;
-  text-align: center;
+  display: grid;
+  grid-row: 3;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  height: 90%;
   margin: 30px auto;
+  text-align: center;
+  width: 90%;
 }
 
 h2 {
@@ -54,8 +59,8 @@ h2 {
 }
 
 article {
-  border: 2px black solid;
   background-color: gray;
+  border: 2px black solid;
 }
 
 h3 {
@@ -74,24 +79,21 @@ h3 {
   background-color: blue;
 }
 
-.hidden {
-  visibility: hidden
-}
-
 .round {
   grid-row: 3;
   margin-top: 15px;
 }
 
 h4 {
-  text-align: center;
   font-size: 2em;
   margin: 0;
+  margin-top: 15px;
+  text-align: center;
 }
 
 .players {
-  grid-row: 4;
   display: grid;
+  grid-row: 4;
   grid-template-columns: 1fr 1fr 1fr ;
   margin-top: 15px;
 }
@@ -112,18 +114,19 @@ h4 {
   margin-bottom: 10px;
 }
 
-#players {
-   text-align: center;
+.eachPlayer {
    margin-top: 20px;
+   text-align: center;
 }
 
 label {
   font-size: 1.25em;
 }
+
 .player-input {
   height: 20px;
-  width: 65%;
   margin-top: 10px;
+  width: 65%;
 }
 
 h5 {
@@ -143,10 +146,10 @@ footer {
 }
 
 .start, .quit {
-  height: 30px;
-  width: 200px;
-  margin: 20px;
   font-size: 1.1em;
+  height: 30px;
+  margin: 0 20px 20px;
+  width: 200px;
 }
 
 button:hover {

@@ -7,58 +7,50 @@ class Round {
 		this.round = 1;
 		this.allCategoryNames = [];
 		this.currentCategories = [];
-    this.currentQuestions = [];
-    // console.log(this.currentQuestions);
+        this.currentQuestions = [];
 	}
-
-
 
 	setCategories(game) {
-   const categoryData = Object.entries(data.categories);
-		   Array.prototype.shuffle = function() {
-    var input = this;    
-    for (var i = input.length-1; i >=0; i--) {
-     
-        var randomIndex = Math.floor(Math.random()*(i+1)); 
-        var categoryAtIndex = input[randomIndex]; 
-         
-        input[randomIndex] = input[i]; 
-        input[i] = categoryAtIndex;
-    }
-    return input;
-  }
-    let shuffledCategories = categoryData.shuffle();
-    this.allCategoryNames.push(shuffledCategories);
-    let currentCategories = shuffledCategories.splice(6,5);
-    let firstRound = currentCategories.forEach((category) =>
-    	game.roundOneCategories.push(category));
+        const categoryData = Object.entries(data.categories);
+		Array.prototype.shuffle = function() {
+        var input = this;    
+            for (var i = input.length-1; i >= 0; i--) {
+                var randomIndex = Math.floor(Math.random()*(i+1)); 
+                var categoryAtIndex = input[randomIndex]; 
+                input[randomIndex] = input[i]; 
+                input[i] = categoryAtIndex;
+        }
+        return input;
+        }
+        let shuffledCategories = categoryData.shuffle();
+        this.allCategoryNames.push(shuffledCategories);
+        let currentCategories = shuffledCategories.splice(6,5);
+        let firstRound = currentCategories.forEach((category) =>
+    	   game.roundOneCategories.push(category));
 	}
 
-  createCards(game) {
-    console.log(game.roundOneCategories);
-    const roundOneClues = [];
-    game.roundOneCategories.forEach(category => {
-      const matchingClues = data.clues.filter(clue => {
-        if (clue.categoryId === category[1]) {
-          roundOneClues.push(clue);
-        }
-          return roundOneClues;
+    createCards(game) {
+        const roundOneClues = [];
+        game.roundOneCategories.forEach(category => {
+            const matchingClues = data.clues.filter(clue => {
+                if (clue.categoryId === category[1]) {
+                roundOneClues.push(clue);
+                }
+                return roundOneClues;
+            });
+            roundOneClues.forEach(clue => {
+            let answer = clue.answer;
+            let categoryId = clue.categoryId;
+            let pointValue = clue.pointValue;
+            let question = clue.question
+            var newCard = new Card(answer, categoryId, pointValue, question);
+            newCard.pickColumn(this);
+            return newCard
+            });   
         });
-        roundOneClues.forEach(clue => {
-          let answer = clue.answer;
-          let categoryId = clue.categoryId;
-          let pointValue = clue.pointValue;
-          let question = clue.question
-          var newCard = new Card(answer, categoryId, pointValue, question);
-          newCard.pickColumn(this);
-          return newCard
-        });   
-      });
     }
 
     sortQuestions(game) {
-        // console.log(game.roundOneCategories); 
-        // console.log(this.currentQuestions); 
         this.currentQuestions.forEach(question => {
             if (game.columnFour.length === 4 && game.columnOne.length === 4 && game.columnTwo.length === 4 && game.columnThree.length === 4) {
                 return;
@@ -81,7 +73,6 @@ class Round {
                 }
             }
         });
-        console.log(game);
     }
 
     checkForUniqueValue(column, question) {

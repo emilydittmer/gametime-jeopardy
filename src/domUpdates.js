@@ -45,7 +45,7 @@ export default {
   loadQuestion(e, game) {
     $(e.target.className);
 
-    let cardClicked =  e.target.className;
+    let cardClicked = e.target.className;
     let splitCardClicked = cardClicked.split('');
     let targetColumn;
     let targetRow;
@@ -71,7 +71,7 @@ export default {
 
     $(`.${cardClicked}`).text(game[targetColumn][targetRow].question);
     game.isAnswered = false;
-
+    $(".answer").text(game[targetColumn][targetRow].answer);
   },
 
   updateScore(player) {
@@ -80,17 +80,6 @@ export default {
         $(currentPlayer).next().next().next().text(player.score);
       }
     });
-  },
- 
-
-
-    // $(".board").append(`<form class="user-answer">
-    //     <label for="user-answer">Answer:</label>
-    //     <input type="text" id="user-answer">
-    //     <button for="user-answer" class="answer-submit">Submit</button></form>`
+  }
 
 }
-
-//click compare category[]
-//.find() value
-
