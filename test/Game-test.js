@@ -40,15 +40,10 @@ describe('Game', function() {
     expect(round.round).to.equal(1);
   });
 
-  //compareAnswers isn't tested
-
-
-  //Failing and unsure why
-  // it('should change player', function() {
-  //   let game = new Game();
-  //   console.log(game);
-  //   expect(game.currentPlayerIndex).to.equal(0);
-  //   game.changePlayer();
-  //   expect(game.currentPlayerIndex).to.equal(1);
-  // })
+  it('should change player', function() {
+    let game = new Game();
+    expect(game.currentPlayerIndex).to.equal(0);
+    game.changePlayer();
+    expect(game.currentPlayerIndex).to.equal(1);
+  });
 });

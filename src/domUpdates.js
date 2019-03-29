@@ -41,7 +41,6 @@ export default {
 
   loadQuestion(e, game) {
     $(e.target.className);
-
     let cardClicked = e.target.className;
     let splitCardClicked = cardClicked.split('');
     let targetColumn;
@@ -65,7 +64,6 @@ export default {
     } else if (splitCardClicked[1] === '4') {
       targetRow = 3;
     }
-
     $(`.${cardClicked}`).text(game[targetColumn][targetRow].question);
     game.isAnswered = false;
     $(".answer").text(game[targetColumn][targetRow].answer);
@@ -79,26 +77,24 @@ export default {
     });
   },
 
+  changePlayers(game) {
+    if (game.currentPlayerIndex === 1) {
+      $(".player-two-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-one-name").css({"color": "", "font-size": "", "font-weight": ""});
+    } else if (game.currentPlayerIndex === 2) {
+      $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
+    } else if (game.currentPlayerIndex === 0) {
+      $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-three-name").css({"color": "", "font-size": "", "font-weight": ""});
+    }
+  },
+
   showAnswer() {
-    let correctAnswer = document.querySelector('.current-answer');
-    correctAnswer.remove('hidden');
+    $('.current-answer').removeClass("hidden");
   },
 
   clearAnswerField() {
     $("#user-answer").val("");
-  },
-
-  changePlayers() {
-    if (game.currentPlayerIndex = 1) {
-      $(".player-two-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
-      $(".player-one-name").css({"color": "", "font-size": "", "font-weight": ""});
-    } else if (game.currentPlayerIndex = 2) {
-      $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
-      $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
-    } else if (game.currentPlayerIndex = 3) {
-      $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
-      $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
-    }
   }
-
 }

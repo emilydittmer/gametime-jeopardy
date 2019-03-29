@@ -25,14 +25,14 @@ describe('Player', function() {
   it('the score should increment', function() {
     let player = new Player ('Lauren');
     expect(player.score).to.equal(0);
-    player.scoreChangeUp(100)
+    player.scoreChangeUp(100);
     expect(player.score).to.equal(100);
   });
 
   it('the score should decrement', function() {
     let player = new Player ('Lauren');
     expect(player.score).to.equal(0);
-    player.scoreChangeDown(100)
+    player.scoreChangeDown(100);
     expect(player.score).to.equal(-100);
   });
 });

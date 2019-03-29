@@ -3,8 +3,8 @@ import Player from './Player.js';
 import Round from './Round.js';
 
 class Game {
-	constructor(round, dailyDoubles, cardsClicked) {
-		this.round = 1;
+  constructor(round, dailyDoubles, cardsClicked) {
+    this.round = 1;
     this.dailyDoubles = 1;
     this.cardsClicked = 0;
     this.roundOneCategories = [];
@@ -15,7 +15,7 @@ class Game {
     this.columnFour = [];
     this.isAnswered = true;
     this.currentPlayerIndex = 0;
-	}
+  }
 
   getPlayerNames(names) {
     const players = names.map(name => {
@@ -49,16 +49,15 @@ class Game {
   changePlayer() {
     if (this.currentPlayerIndex === 0) {
       this.currentPlayerIndex = 1;
-      domUpdates.changePlayers(currentPlayerIndex);
+      domUpdates.changePlayers(this);
     } else if (this.currentPlayerIndex === 1) {
       this.currentPlayerIndex = 2;
-      domUpdates.changePlayers(currentPlayerIndex)
+      domUpdates.changePlayers(this);
     } else if (this.currentPlayerIndex === 2) {
       this.currentPlayerIndex = 0;
-      domUpdates.changePlayers(currentPlayerIndex)
+      domUpdates.changePlayers(this)
     }
   }
-
 }
 
 export default Game;

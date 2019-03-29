@@ -23,8 +23,29 @@ class Round {
     let shuffledCategories = categoryData.shuffle();
     this.allCategoryNames.push(shuffledCategories);
     let currentCategories = shuffledCategories.splice(6, 5);
-    let firstRound = currentCategories.forEach((category) =>
+    currentCategories.forEach((category) =>
       game.roundOneCategories.push(category));
+  }
+
+  createCards(game) {
+    const roundOneClues = [];
+    game.roundOneCategories.forEach(category => {
+      data.clues.filter(clue => {
+        if (clue.categoryId === category[1]) {
+          roundOneClues.push(clue);
+        }
+        return roundOneClues;
+      });
+      roundOneClues.forEach(clue => {
+        let answer = clue.answer;
+        let categoryId = clue.categoryId;
+        let pointValue = clue.pointValue;
+        let question = clue.question
+        var newCard = new Card(answer, categoryId, pointValue, question);
+        newCard.pickColumn(this);
+        return newCard
+      });   
+    });
   }
 
   sortQuestions(game) {
@@ -32,15 +53,15 @@ class Round {
       if (game.columnFour.length === 4 && game.columnOne.length === 4 && game.columnTwo.length === 4 && game.columnThree.length === 4) {
         return;
       }
-      if (question.categoryID === game.roundOneCategories[0][1]) {
+      if (question.categoryId === game.roundOneCategories[0][1]) {
         if (!this.checkForUniqueValue(game.columnOne, question)) {
           game.columnOne.push(question);
         }
-      } else if (question.categoryID === game.roundOneCategories[1][1]) {
+      } else if (question.categoryId === game.roundOneCategories[1][1]) {
         if (!this.checkForUniqueValue(game.columnTwo, question)) {
           game.columnTwo.push(question);
         }
-      } else if (question.categoryID === game.roundOneCategories[2][1]) {
+      } else if (question.categoryId === game.roundOneCategories[2][1]) {
         if (!this.checkForUniqueValue(game.columnThree, question)) {
           game.columnThree.push(question);
         }

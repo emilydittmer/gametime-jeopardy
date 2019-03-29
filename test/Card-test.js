@@ -22,29 +22,16 @@ describe('Card', function() {
   });
 
   it('should have defaults', function() {
-    let clue = {
-      question: "question",
-      pointValue: 100,
-      answer: "answer",
-      categoryId: 10
-    };
-    let card = new Card(clue);
+    let card = new Card('answer', 10, 100, 'question');
 
-    expect(card.question).to.equal("question");
-    expect(card.pointValue).to.equal(100);
-    expect(card.answer).to.equal("answer");
+    expect(card.answer).to.equal('answer');
     expect(card.categoryId).to.equal(10);
+    expect(card.pointValue).to.equal(100);
+    expect(card.question).to.equal('question');
   });
 
   it('should default to not a daily double', function() {
-    let clue = {
-      question: "question",
-      pointValue: 100,
-      answer: "answer",
-      categoryId: 10
-    };
-    let card = new Card(clue);
-
+    let card = new Card('answer', 10, 100, 'question');
     expect(card.isDailyDouble).to.equal(false);
   });
 
