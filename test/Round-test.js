@@ -19,12 +19,4 @@ describe('Round', function() {
     expect(round.currentQuestions).to.deep.equal([]);
   });
 
-  it('should sort the questions', function() {
-
-  });
-
-  it('should check for unique value', function() {
-
-  })
-
 });

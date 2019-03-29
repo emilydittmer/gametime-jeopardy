@@ -31,7 +31,7 @@ describe('Card', function() {
   });
 
   it('should default to not a daily double', function() {
-		let card = new Card('answer', 10, 100, 'question');
+    let card = new Card('answer', 10, 100, 'question');
 
     expect(card.isDailyDouble).to.equal(false);
   });

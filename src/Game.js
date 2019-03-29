@@ -1,15 +1,13 @@
-import data from './Game-Data.js';
 import domUpdates from './domUpdates.js';
 import Player from './Player.js';
 import Round from './Round.js';
-import Card from './Card.js';
 
 class Game {
-	constructor(round, dailyDoubles, cardsClicked) {
-		this.round = 1;
-		this.dailyDoubles = 1;
-		this.cardsClicked = 0;
-		this.roundOneCategories = [];
+  constructor(round, dailyDoubles, cardsClicked) {
+    this.round = 1;
+    this.dailyDoubles = 1;
+    this.cardsClicked = 0;
+    this.roundOneCategories = [];
     this.currentPlayers = [];
     this.columnOne = [];
     this.columnTwo = [];
@@ -17,7 +15,7 @@ class Game {
     this.columnFour = [];
     this.isAnswered = true;
     this.currentPlayerIndex = 0;
-	}
+  }
 
   getPlayerNames(names) {
     const players = names.map(name => {

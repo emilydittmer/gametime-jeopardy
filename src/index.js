@@ -14,12 +14,12 @@ let cardValue;
 startBtn.click(function(e) {
   e.preventDefault();
   const names = [$(".player-one-input").val(), $(".player-two-input").val(), $(".player-three-input").val()];
-  const playerOneName = $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"})
+  $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"})
   game.getPlayerNames(names);
   game.setRoundOne();
 });
 
-$('.board').click(function(e){
+$('.board').click(function(e) {
   cardValue = parseInt($(`h3.${e.target.classList[0]}`)[0].innerHTML);
 });
 
@@ -29,7 +29,7 @@ card.click(function(e) {
     setTimeout(function() {
       domUpdates.loadQuestion(e, game);
 
-    $(".user-answer-form").removeClass("hidden");
+      $(".user-answer-form").removeClass("hidden");
     }, 100)
   }
 });

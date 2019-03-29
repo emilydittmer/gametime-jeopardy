@@ -1,15 +1,11 @@
 import $ from 'jquery';
-import Game from './Game.js';
-import Player from './Player.js';
-import Round from './Round.js';
-import Card from './Card.js';
 
 export default {
   updatePlayerNames(names) {
-      $(".player-one-name").text(names[0].name);
-      $(".player-two-name").text(names[1].name);
-      $(".player-three-name").text(names[2].name);
-      $(".player-input").remove();
+    $(".player-one-name").text(names[0].name);
+    $(".player-two-name").text(names[1].name);
+    $(".player-three-name").text(names[2].name);
+    $(".player-input").remove();
   },
 
   appendCategoryNames(game) {
@@ -37,10 +33,10 @@ export default {
         fancyCategoryNames.push('Cable TV')
       }
     });
-      $(".category-one").text(fancyCategoryNames[0]);
-      $(".category-two").text(fancyCategoryNames[1]);
-      $(".category-three").text(fancyCategoryNames[2]);
-      $(".category-four").text(fancyCategoryNames[3]);
+    $(".category-one").text(fancyCategoryNames[0]);
+    $(".category-two").text(fancyCategoryNames[1]);
+    $(".category-three").text(fancyCategoryNames[2]);
+    $(".category-four").text(fancyCategoryNames[3]);
   },
 
   loadQuestion(e, game) {
@@ -65,7 +61,7 @@ export default {
       targetRow = 1;
     } else if (splitCardClicked[1] === '3') {
       targetRow = 2;
-    } else if (splitCardClicked[1] === '4'){
+    } else if (splitCardClicked[1] === '4') {
       targetRow = 3;
     }
     $(`.${cardClicked}`).text(game[targetColumn][targetRow].question);
@@ -75,7 +71,7 @@ export default {
 
   updateScore(player) {
     $(".player-name").each( (index, currentPlayer) => {
-      if($(currentPlayer).text() === player.name) {
+      if ($(currentPlayer).text() === player.name) {
         $(currentPlayer).next().next().next().text(player.score);
       }
     });
@@ -89,7 +85,6 @@ export default {
       $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
       $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
     } else if (game.currentPlayerIndex === 0) {
-      console.log('hi');
       $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
       $(".player-three-name").css({"color": "", "font-size": "", "font-weight": ""});
     }

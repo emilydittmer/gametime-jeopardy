@@ -4,7 +4,6 @@ import spies from 'chai-spies';
 chai.use(spies);
 
 import Player from '../src/Player.js';
-import domUpdates from '../src/domUpdates.js';
 
 describe('Player', function() {
   it('should return true', function() {
