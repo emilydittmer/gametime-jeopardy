@@ -93,5 +93,13 @@ export default {
       $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
       $(".player-three-name").css({"color": "", "font-size": "", "font-weight": ""});
     }
+  },
+
+  showAnswer() {
+    $('.current-answer').removeClass("hidden");
+  },
+
+  clearAnswerField() {
+    $("#user-answer").val("");
   }
 }

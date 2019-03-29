@@ -46,8 +46,8 @@ class Game {
       this.currentPlayers[this.currentPlayerIndex].scoreChangeDown(cardValue);
       this.changePlayer();
     }
-    $(".current-answer").removeClass("hidden");
-    $("#user-answer").val("");
+    domUpdates.showAnswer();
+    domUpdates.clearAnswerField();
     this.isAnswered = true;
   }
 
