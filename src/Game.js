@@ -32,7 +32,6 @@ class Game {
     let newRound = new Round(this);
     newRound.setCategories(this);
     domUpdates.appendCategoryNames(this);
-    newRound.createCards(this);
     newRound.sortQuestions(this);
   }
 

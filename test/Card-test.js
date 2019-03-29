@@ -20,38 +20,36 @@ chai.spy.on(domUpdates, [
 	'changePlayers'
 	], () => true);
 
-describe('see if the tests are running', function() {
+describe('Card', function() {
 	it('should return true', function() {
 		expect(true).to.equal(true);
 	});
 
-	it('should have a category', function() {
-		let card = new Card('unitedStatesHistory');
+	it('should have defaults', function() {
+		let clue = {
+      question: "question",
+      pointValue: 100,
+      answer: "answer",
+      categoryId: 10
+    };
+		let card = new Card(clue);
 
-		expect(card.category).to.equal('unitedStatesHistory');
-	});
-
-	it('should have question', function() {
-		let card = new Card('Food', 'I have a question?');
-
-		expect(card.question).to.equal('I have a question?');
-	});
-
-	it('should have an answer', function() {
-		let card = new Card ('Food', 'I have a question?', 'I have an answer!');
-
-		expect(card.answer).to.equal('I have an answer!');
-	});
-
-	it('should have a point value', function() {
-		let card = new Card ('Food', 'I have a question?', 'I have an answer!', 100); 
-
+		expect(card.question).to.equal("question");
 		expect(card.pointValue).to.equal(100);
+		expect(card.answer).to.equal("answer");
+		expect(card.categoryId).to.equal(10);
 	});
 
 	it('should default to not a daily double', function() {
-		let card = new Card ();
+		let clue = {
+      question: "question",
+      pointValue: 100,
+      answer: "answer",
+      categoryId: 10
+    };
+		let card = new Card(clue);
 
 		expect(card.isDailyDouble).to.equal(false);
 	});
+
 });

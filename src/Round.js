@@ -29,28 +29,6 @@ class Round {
     	   game.roundOneCategories.push(category));
 	}
 
-    createCards(game) {
-        const roundOneClues = [];
-        game.roundOneCategories.forEach(category => {
-            const matchingClues = data.clues.filter(clue => {
-                if (clue.categoryId === category[1]) {
-                roundOneClues.push(clue);
-                }
-                return roundOneClues;
-            });
-            roundOneClues.forEach(clue => {
-            let answer = clue.answer;
-            let categoryId = clue.categoryId;
-            let pointValue = clue.pointValue;
-            let question = clue.question
-            var newCard = new Card(answer, categoryId, pointValue, question);
-            newCard.pickColumn(this);
-            return newCard
-            });   
-        });
-    }
-
-//let {answer, categoryID, pointValue, question} = clue;∫
     sortQuestions(game) {
         this.currentQuestions.forEach(question => {
             if (game.columnFour.length === 4 && game.columnOne.length === 4 && game.columnTwo.length === 4 && game.columnThree.length === 4) {
