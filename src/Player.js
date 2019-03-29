@@ -1,4 +1,3 @@
-import Game from './Game.js';
 import domUpdates from './domUpdates.js';
 
 class Player {

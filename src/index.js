@@ -1,12 +1,8 @@
 import $ from 'jquery';
 import './css/base.css';
 import './css/normalize.css';
-import Card from '../src/Card.js';
 import domUpdates from '../src/domUpdates.js';
-import data from '../src/Game-Data.js';
 import Game from '../src/Game.js';
-import Player from '../src/Player.js';
-import Round from '../src/Round.js';
 
 const game = new Game;
 const startBtn = $(".start");
@@ -23,7 +19,7 @@ startBtn.click(function(e) {
   game.setRoundOne();
 });
 
-$('.board').click(function(e){
+$('.board').click(function(e) {
   cardValue = parseInt($(`h3.${e.target.classList[0]}`)[0].innerHTML);
 });
 
