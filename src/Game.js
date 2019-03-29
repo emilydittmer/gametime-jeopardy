@@ -1,6 +1,5 @@
 import data from './Game-Data.js';
 import domUpdates from './domUpdates.js';
-import index from './index.js';
 import Player from './Player.js';
 import Round from './Round.js';
 import Card from './Card.js';
@@ -55,19 +54,15 @@ class Game {
   changePlayer() {
     if (this.currentPlayerIndex === 0) {
       this.currentPlayerIndex = 1;
-      $(".player-two-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
-      $(".player-one-name").css({"color": "", "font-size": "", "font-weight": ""});
+      domUpdates.changePlayers(this);
     } else if (this.currentPlayerIndex === 1) {
       this.currentPlayerIndex = 2;
-      $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
-      $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
+      domUpdates.changePlayers(this);
     } else if (this.currentPlayerIndex === 2) {
       this.currentPlayerIndex = 0;
-      $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
-      $(".player-three-name").css({"color": "", "font-size": "", "font-weight": ""});
+      domUpdates.changePlayers(this)
     }
   }
-
 }
 
 export default Game;

@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import Game from './Game.js';
-import index from './index.js';
 import player from './Player.js';
 
 export default {
@@ -80,6 +79,19 @@ export default {
         $(currentPlayer).next().next().next().text(player.score);
       }
     });
-  }
+  },
 
+  changePlayers(game) {
+    if (game.currentPlayerIndex === 1) {
+      $(".player-two-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-one-name").css({"color": "", "font-size": "", "font-weight": ""});
+    } else if (game.currentPlayerIndex === 2) {
+      $(".player-three-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-two-name").css({"color": "", "font-size": "", "font-weight": ""});
+    } else if (game.currentPlayerIndex === 0) {
+      console.log('hi');
+      $(".player-one-name").css({"color": "blue", "font-size": "200%", "font-weight": "bold"});
+      $(".player-three-name").css({"color": "", "font-size": "", "font-weight": ""});
+    }
+  }
 }
