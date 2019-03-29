@@ -28,6 +28,7 @@ card.click(function(e) {
   if (game.isAnswered) {
     setTimeout(function() {
       domUpdates.loadQuestion(e, game);
+
     $(".user-answer-form").removeClass("hidden");
     }, 100)
   }
@@ -35,7 +36,9 @@ card.click(function(e) {
 
 answerSubmit.click(function(e) {
   e.preventDefault();
-  game.compareAnswers(cardValue);
+  let userInput = $("#user-answer").val().toLowerCase();
+  let realAnswer = $(".answer").text().toLowerCase();
+  game.compareAnswers(cardValue, userInput, realAnswer);
 });
 
 quitBtn.click(function() {

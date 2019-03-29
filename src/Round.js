@@ -1,6 +1,7 @@
 import Game from './Game.js';
 import data from './Game-Data.js';
 import Card from './Card.js';
+import Round from './Round.js';
 
 class Round {
 	constructor(game) {
@@ -55,15 +56,15 @@ class Round {
             if (game.columnFour.length === 4 && game.columnOne.length === 4 && game.columnTwo.length === 4 && game.columnThree.length === 4) {
                 return;
             }
-            if (question.categoryID === game.roundOneCategories[0][1]) {
+            if (question.categoryId === game.roundOneCategories[0][1]) {
                 if(!this.checkForUniqueValue(game.columnOne, question)) {
                     game.columnOne.push(question);
                 }
-            } else if (question.categoryID === game.roundOneCategories[1][1]) {
+            } else if (question.categoryId === game.roundOneCategories[1][1]) {
                 if(!this.checkForUniqueValue(game.columnTwo, question)) {
                     game.columnTwo.push(question);
                 }
-            } else if (question.categoryID === game.roundOneCategories[2][1]) {
+            } else if (question.categoryId === game.roundOneCategories[2][1]) {
                 if(!this.checkForUniqueValue(game.columnThree, question)) {
                     game.columnThree.push(question);
                 }

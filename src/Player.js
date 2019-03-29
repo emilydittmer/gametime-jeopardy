@@ -1,4 +1,3 @@
-import Game from './Game.js';
 import domUpdates from './domUpdates.js';
 
 class Player {
@@ -6,7 +5,7 @@ class Player {
     this.name = name;
     this.score = 0;
   }
-  
+
   scoreChangeUp(cardValue) {
     this.score += cardValue;
     domUpdates.updateScore(this);

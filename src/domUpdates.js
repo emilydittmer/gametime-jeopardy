@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import Game from './Game.js';
-import player from './Player.js';
-import round from './Round.js';
-import card from './Card.js';
+import Player from './Player.js';
+import Round from './Round.js';
+import Card from './Card.js';
 
 export default {
   updatePlayerNames(names) {
@@ -45,7 +45,6 @@ export default {
 
   loadQuestion(e, game) {
     $(e.target.className);
-
     let cardClicked = e.target.className;
     let splitCardClicked = cardClicked.split('');
     let targetColumn;
@@ -69,7 +68,6 @@ export default {
     } else if (splitCardClicked[1] === '4'){
       targetRow = 3;
     }
-
     $(`.${cardClicked}`).text(game[targetColumn][targetRow].question);
     game.isAnswered = false;
     $(".answer").text(game[targetColumn][targetRow].answer);

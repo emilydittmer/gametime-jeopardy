@@ -1,40 +1,39 @@
 import chai from 'chai';
-import Card from '../src/Card.js';
-
 const expect = chai.expect;
+import spies from 'chai-spies';
+chai.use(spies);
 
-describe('see if the tests are running', function() {
-	it('should return true', function() {
-		expect(true).to.equal(true);
-	});
+import Card from '../src/Card.js';
+import domUpdates from '../src/domUpdates.js';
 
-	it('should have a category', function() {
-		let card = new Card('unitedStatesHistory');
+chai.spy.on(domUpdates, [
+  'updatePlayerNames',
+  'appendCategoryNames',
+  'loadQuestion',
+  'updateScore',
+  'showAnswer',
+  'clearAnswerField',
+  'changePlayers'
+], () => true);
 
-		expect(card.category).to.equal('unitedStatesHistory');
-	});
+describe('Card', function() {
+  it('should return true', function() {
+    expect(true).to.equal(true);
+  });
 
-	it('should have question', function() {
-		let card = new Card('Food', 'I have a question?');
+  it('should have defaults', function() {
+    let card = new Card('answer', 10, 100, 'question');
 
-		expect(card.question).to.equal('I have a question?');
-	});
+    expect(card.answer).to.equal('answer');
+    expect(card.categoryId).to.equal(10);
+    expect(card.pointValue).to.equal(100);
+    expect(card.question).to.equal('question');
+  });
 
-	it('should have an answer', function() {
-		let card = new Card ('Food', 'I have a question?', 'I have an answer!');
+  it('should default to not a daily double', function() {
+		let card = new Card('answer', 10, 100, 'question');
 
-		expect(card.answer).to.equal('I have an answer!');
-	});
+    expect(card.isDailyDouble).to.equal(false);
+  });
 
-	it('should have a point value', function() {
-		let card = new Card ('Food', 'I have a question?', 'I have an answer!', 100); 
-
-		expect(card.pointValue).to.equal(100);
-	});
-
-	it('should default to not a daily double', function() {
-		let card = new Card ();
-
-		expect(card.isDailyDouble).to.equal(false);
-	});
 });

@@ -3,9 +3,9 @@ import Game from './Game.js';
 import Round from './Round.js';
 
 class Card {
-	constructor(answer, categoryID, pointValue, question) {
+	constructor(answer, categoryId, pointValue, question) {
 		this.answer = answer;
-		this.categoryID = categoryID;
+		this.categoryId = categoryId;
 		this.pointValue = pointValue;
 		this.question = question;
 		this.isDailyDouble = false;
