@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import Game from './Game.js';
 import player from './Player.js';
+import round from './Round.js';
+import card from './Card.js';
 
 export default {
   updatePlayerNames(names) {
