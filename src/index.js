@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import './css/base.css';
 import './css/normalize.css';
-import Game from './Game.js';
-import domUpdates from './domUpdates.js';
+import domUpdates from '../src/domUpdates.js';
+import Game from '../src/Game.js';
 
 const game = new Game;
 const startBtn = $(".start");

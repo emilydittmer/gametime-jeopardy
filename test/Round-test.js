@@ -18,5 +18,4 @@ describe('Round', function() {
     expect(round.currentCategories).to.deep.equal([]);
     expect(round.currentQuestions).to.deep.equal([]);
   });
-
 });

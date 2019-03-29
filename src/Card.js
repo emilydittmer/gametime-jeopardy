@@ -10,7 +10,6 @@ class Card {
   pickColumn(round) {
     round.currentQuestions.push(this);
   }
-
 }
 
 export default Card;

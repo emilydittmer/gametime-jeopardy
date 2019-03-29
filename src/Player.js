@@ -5,7 +5,7 @@ class Player {
     this.name = name;
     this.score = 0;
   }
-
+  
   scoreChangeUp(cardValue) {
     this.score += cardValue;
     domUpdates.updateScore(this);

@@ -45,5 +45,5 @@ describe('Game', function() {
     expect(game.currentPlayerIndex).to.equal(0);
     game.changePlayer();
     expect(game.currentPlayerIndex).to.equal(1);
-  })
+  });
 });
