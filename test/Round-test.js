@@ -3,11 +3,6 @@ const expect = chai.expect;
 import spies from 'chai-spies';
 chai.use(spies);
 
-import Card from '../src/Card.js';
-import domUpdates from '../src/domUpdates.js';
-import data from '../src/Game-Data.js';
-import Game from '../src/Game.js';
-import Player from '../src/Player.js';
 import Round from '../src/Round.js';
 
 describe('Round', function() {
@@ -29,7 +24,7 @@ describe('Round', function() {
   });
 
   it('should check for unique value', function() {
-    
+
   })
 
 });
