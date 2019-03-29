@@ -10,36 +10,26 @@ import Game from '../src/Game.js';
 import Player from '../src/Player.js';
 import Round from '../src/Round.js';
 
-// chai.spy.on(domUpdates, [
-//   'updatePlayerNames',
-//   'appendCategoryNames',
-//   'loadQuestion',
-//   'updateScore',
-//   'showAnswer',
-//   'clearAnswerField',
-//   'changePlayers'
-//   ], () => true);
-
-describe('See if the tests are running', function() {
+describe('Round', function() {
   it('should return true', function() {
     expect(true).to.equal(true);
   });
 
-  it('should de', function() {
-    let player = new Player('Lauren');
+  it('should default to round one', function() {
+    let round = new Round(1);
 
-    expect(player.name).to.equal('Lauren');
+    expect(round.round).to.equal(1);
+    expect(round.allCategoryNames).to.deep.equal([]);
+    expect(round.currentCategories).to.deep.equal([]);
+    expect(round.currentQuestions).to.deep.equal([]);
   });
 
-  it('should have a default name', function() {
-    let player = new Player();
+  it('should sort the questions', function() {
 
-    expect(player.name).to.equal('Player');
   });
 
-  it('should have a default score', function() {
-    let player = new Player('Lauren');
+  it('should check for unique value', function() {
+    
+  })
 
-    expect(player.score).to.equal(0);
-  });
 });

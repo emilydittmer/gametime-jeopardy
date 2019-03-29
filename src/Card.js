@@ -3,16 +3,12 @@ import Game from './Game.js';
 import Round from './Round.js';
 
 class Card {
-	constructor(answer, categoryID, pointValue, question) {
-		this.answer = answer;
-		this.categoryID = categoryID;
-		this.pointValue = pointValue;
-		this.question = question;
+	constructor(clue) {
+		this.answer = clue.answer;
+		this.categoryId = clue.categoryId;
+		this.pointValue = clue.pointValue;
+		this.question = clue.question;
 		this.isDailyDouble = false;
-	}
-
-	pickColumn(round) {
-		const usefulQuestions = round.currentQuestions.push(this);
 	}
 
 }

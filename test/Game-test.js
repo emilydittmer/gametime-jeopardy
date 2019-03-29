@@ -10,16 +10,6 @@ import Game from '../src/Game.js';
 import Player from '../src/Player.js';
 import Round from '../src/Round.js';
 
-// chai.spy.on(domUpdates, [
-//   'updatePlayerNames',
-//   'appendCategoryNames',
-//   'loadQuestion',
-//   'updateScore',
-//   'showAnswer',
-//   'clearAnswerField',
-//   'changePlayers'
-//   ], () => true);
-
 describe('Game', function() {
 
 	it('should return true', function() {
@@ -32,5 +22,37 @@ describe('Game', function() {
 		expect(game.round).to.equal(1);
 		expect(game.dailyDoubles).to.equal(1);
 		expect(game.cardsClicked).to.equal(0);
+    expect(game.roundOneCategories).to.deep.equal([]);
+    expect(game.currentPlayers).to.deep.equal([]);
+    expect(game.columnOne).to.deep.equal([]);
+    expect(game.columnTwo).to.deep.equal([]);
+    expect(game.columnThree).to.deep.equal([]);
+    expect(game.columnFour).to.deep.equal([]);
+    expect(game.isAnswered).to.equal(true);
+    expect(game.currentPlayerIndex).to.equal(0);
 	});
+
+  it('should be able to get an array of player objects', function() {
+    let game = new Game(1, 1, 0);
+    game.getPlayerNames(['Bob', 'Frank', 'Billy']);
+    expect(game.currentPlayers[0].name).to.equal('Bob');
+  });
+
+  it('should start at round one', function() {
+    let game = new Game(1, 1, 0);
+    let round = new Round(game);
+    expect(round.round).to.equal(1);
+  });
+
+  //compareAnswers isn't tested
+
+
+  //Failing and unsure why
+  // it('should change player', function() {
+  //   let game = new Game();
+  //   console.log(game);
+  //   expect(game.currentPlayerIndex).to.equal(0);
+  //   game.changePlayer();
+  //   expect(game.currentPlayerIndex).to.equal(1);
+  // })
 });
