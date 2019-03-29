@@ -1,4 +1,5 @@
 import data from './Game-Data.js';
+import Card from './Card.js';
 
 class Round {
   constructor() {

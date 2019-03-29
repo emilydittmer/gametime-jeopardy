@@ -30,6 +30,7 @@ class Game {
     let newRound = new Round(this);
     newRound.setCategories(this);
     domUpdates.appendCategoryNames(this);
+    newRound.createCards(this);
     newRound.sortQuestions(this);
   }
 
@@ -38,11 +39,10 @@ class Game {
       this.currentPlayers[this.currentPlayerIndex].scoreChangeUp(cardValue);
     } else {
       this.currentPlayers[this.currentPlayerIndex].scoreChangeDown(cardValue);
-      domUpdates.changePlayer();
+      this.changePlayer();
     }
     domUpdates.showAnswer();
     domUpdates.clearAnswerField();
-
     this.isAnswered = true;
   }
 
