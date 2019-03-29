@@ -3,25 +3,21 @@ const expect = chai.expect;
 import spies from 'chai-spies';
 chai.use(spies);
 
-import Card from '../src/Card.js';
-import domUpdates from '../src/domUpdates.js';
-import data from '../src/Game-Data.js';
 import Game from '../src/Game.js';
-import Player from '../src/Player.js';
 import Round from '../src/Round.js';
 
 describe('Game', function() {
 
-	it('should return true', function() {
-		expect(true).to.equal(true);
-	});
+  it('should return true', function() {
+    expect(true).to.equal(true);
+  });
 
-	it('should set defaults', function() {
-		let game = new Game(1, 1, 0);
+  it('should set defaults', function() {
+    let game = new Game(1, 1, 0);
 
-		expect(game.round).to.equal(1);
-		expect(game.dailyDoubles).to.equal(1);
-		expect(game.cardsClicked).to.equal(0);
+    expect(game.round).to.equal(1);
+    expect(game.dailyDoubles).to.equal(1);
+    expect(game.cardsClicked).to.equal(0);
     expect(game.roundOneCategories).to.deep.equal([]);
     expect(game.currentPlayers).to.deep.equal([]);
     expect(game.columnOne).to.deep.equal([]);
@@ -30,7 +26,7 @@ describe('Game', function() {
     expect(game.columnFour).to.deep.equal([]);
     expect(game.isAnswered).to.equal(true);
     expect(game.currentPlayerIndex).to.equal(0);
-	});
+  });
 
   it('should be able to get an array of player objects', function() {
     let game = new Game(1, 1, 0);

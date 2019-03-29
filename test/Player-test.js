@@ -3,12 +3,7 @@ const expect = chai.expect;
 import spies from 'chai-spies';
 chai.use(spies);
 
-import Card from '../src/Card.js';
-import domUpdates from '../src/domUpdates.js';
-import data from '../src/Game-Data.js';
-import Game from '../src/Game.js';
 import Player from '../src/Player.js';
-import Round from '../src/Round.js';
 
 describe('Player', function() {
   it('should return true', function() {
@@ -34,7 +29,7 @@ describe('Player', function() {
     expect(player.score).to.equal(100);
   });
 
-    it('the score should decrement', function() {
+  it('the score should decrement', function() {
     let player = new Player ('Lauren');
     expect(player.score).to.equal(0);
     player.scoreChangeDown(100)
